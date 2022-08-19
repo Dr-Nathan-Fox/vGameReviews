@@ -1,7 +1,6 @@
 ---
 output: github_document
 ---
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -10,8 +9,10 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+## steamReviews
 
-## R Markdown
+The goal of this R package is to provide an accessible method for returning reviews from the Steam API into the R environment.
+
 
 ## Issues and bugs
 
