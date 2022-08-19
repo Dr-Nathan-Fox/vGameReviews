@@ -1,0 +1,18 @@
+Package: steamReviews
+Title: Query the Steam Api for game reviews.
+Version: 0.0.0.9000
+Authors@R: 
+    person("Nathan", "Fox", , "foxnat@umich.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-2816-9751"))
+Description: Returns publically available reviews for games hosted on Steam.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    jsonlite,
+    progress
