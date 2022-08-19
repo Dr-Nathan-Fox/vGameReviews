@@ -1,6 +1,12 @@
 ---
 output: github_document
 ---
+
+<!-- badges: start -->
+  [![Codecov test coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nfox29/steamReviews?branch=main)
+  <!-- badges: end -->
+
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

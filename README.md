@@ -1,4 +1,10 @@
 
+<!-- badges: start -->
+
+[![Codecov test
+coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nfox29/steamReviews?branch=main)
+<!-- badges: end -->
+
 ## steamReviews
 
 The goal of this R package is to provide an accessible method for

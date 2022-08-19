@@ -100,9 +100,11 @@ getReviews <- function(game_id = 0){
     #number of reviews from parse (should be 100 unless last page)
     num_review <- jsondata[["query_summary"]][["num_reviews"]]
 
-    print(new_curs)
+    #print(new_curs)
 
   }
+
+  out <- data.frame(out)
 
   return(out)
 
