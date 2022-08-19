@@ -1,0 +1,21 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+## R Markdown
+
+## Issues and bugs
+
+This package requires an internet connection as well as a connection to the Steam API, which may not be constantly available. 
+
+If you discover a bug not associated with connection to the API that is not already a [reported issue](https://github.com/nfox29/steamReviews/issues), please [open a new issue](https://github.com/nfox29/steamReviews/issues/new) providing a reproducible example.
+
