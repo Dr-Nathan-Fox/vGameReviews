@@ -10,6 +10,15 @@ coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)
 The goal of this R package is to provide an accessible method for
 returning reviews from the Steam API into the R environment.
 
+## Return all reviews
+
+``` r
+library(steamReviews)
+
+#Get reviews for Planet Zoo: Conservation Pack
+reviews <- allReviews(game_id = 2013290)
+```
+
 ## Issues and bugs
 
 This package requires an internet connection as well as a connection to

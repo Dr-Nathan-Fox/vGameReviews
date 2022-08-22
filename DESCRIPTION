@@ -1,5 +1,5 @@
 Package: steamReviews
-Title: Query the Steam Api for game reviews.
+Title: Query the Steam Api for game reviews
 Version: 0.0.0.9000
 Authors@R: 
     person("Nathan", "Fox", , "foxnat@umich.edu", role = c("aut", "cre"),
@@ -14,6 +14,10 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    data.table,
     dplyr,
+    dqshiny,
     jsonlite,
-    progress
+    progress,
+    shiny,
+    utils

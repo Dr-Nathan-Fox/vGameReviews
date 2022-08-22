@@ -1,9 +1,9 @@
-#' getReviews
+#' posReviews
 #'
-#' @param game_id The game id. Can be found at: https://steamdb.info/apps/
+#' @param game_id The game id. Integer or string.
+#' Can be found at: https://steamdb.info/apps/
 #'
-#' @return Character, required.
-#' A dataframe containing review and reviewer information
+#' @return A data.frame containing review and reviewer information
 #'
 #' @export
 #'
@@ -15,13 +15,15 @@
 #' }
 #'
 #'
-getReviews <- function(game_id = 0){
+posReviews <- function(game_id = 0){
+
 
   #create base url with dates and search terms
   base_url <- paste("https://store.steampowered.com/appreviews/",
                     paste(game_id),
                     "?json=1",
                     "&filter=recent",
+                    "&review_type=positive",
                     "&cursor=*",
                     "&num_per_page=100",
                     sep = "")
@@ -37,9 +39,9 @@ getReviews <- function(game_id = 0){
   }
 
   #any user reviews?
-  any_reviews <- paste(jsondata[["query_summary"]][["review_score_desc"]])
+  any_reviews <- jsondata[["query_summary"]][["num_reviews"]]
 
-  if(any_reviews == "No user reviews"){
+  if(any_reviews < 1){
     stop(paste("No user reviews"))
   }
 
@@ -50,7 +52,7 @@ getReviews <- function(game_id = 0){
   new_curs <- jsondata[["cursor"]]
 
   #url encode cursor
-  new_curs <- URLencode(new_curs, reserved = TRUE)
+  new_curs <-  utils::URLencode(new_curs, reserved = TRUE)
 
   #number of reviews from parse (should be 100 unless last page)
   num_review <- jsondata[["query_summary"]][["num_reviews"]]
@@ -58,21 +60,15 @@ getReviews <- function(game_id = 0){
   #number of total reviews for progress bar
   total_review <- paste(jsondata[["query_summary"]][["total_reviews"]])
 
-  #begin progress bar
-  pb <- progress::progress_bar$new(format = "[:bar] :current/:total (:percent)",
-                         total = total_review)
-
   #loop through all the extra pages
   while(num_review > 0){
-
-    #update progress bar
-    pb$tick(num_review)
 
     #create base url with dates and search terms
     base_url <- paste("https://store.steampowered.com/appreviews/",
                       paste(game_id),
                       "?json=1",
                       "&filter=recent",
+                      "&review_type=positive",
                       "&cursor=",
                       new_curs,
                       "&num_per_page=100",
@@ -88,7 +84,7 @@ getReviews <- function(game_id = 0){
     new_curs <- jsondata[["cursor"]]
 
     #url encode cursor
-    new_curs <- URLencode(new_curs, reserved = TRUE)
+    new_curs <-  utils::URLencode(new_curs, reserved = TRUE)
 
     #some issue with score sometimes being int and somethimes a character
     tmp_out$weighted_vote_score <- paste(tmp_out$weighted_vote_score)
@@ -99,8 +95,6 @@ getReviews <- function(game_id = 0){
 
     #number of reviews from parse (should be 100 unless last page)
     num_review <- jsondata[["query_summary"]][["num_reviews"]]
-
-    #print(new_curs)
 
   }
 
