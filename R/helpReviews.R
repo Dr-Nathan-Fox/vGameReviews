@@ -2,6 +2,7 @@
 #'
 #' @param game_id The game id. Integer or string.
 #' Can be found at: https://steamdb.info/apps/
+#'
 #' @param day_range How many days to search for between 1 and 365.
 #'
 #' @return A data.frame containing review and reviewer information
@@ -18,6 +19,13 @@
 #'
 helpReviews <- function(game_id = 0,
                         day_range = 365){
+
+  #Check suitable day range
+  if(day_range < 1 | day_range > 365){
+
+    stop("Day range must be between 1 and 365")
+
+  }
 
 
   #create base url with dates and search terms

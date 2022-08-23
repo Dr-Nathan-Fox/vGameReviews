@@ -10,7 +10,8 @@ gameList()
 data.frame of all games on Steam along with their game ID
 }
 \description{
-gameList
+Returns a data.frame of all games from the Steam library with their appID.
+See \url{http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json} for more information.
 }
 \examples{
 \dontrun{
