@@ -17,17 +17,40 @@ knitr::opts_chunk$set(
 ```
 ## steamReviews
 
-The goal of this R package is to provide an accessible method for returning reviews from the Steam API into the R environment.
+The goal of this R package is to provide an accessible method for returning reviews from the Steam API into the R environment. The package can also be used to find information about the games, see the 
 
-## Return all reviews
+## Return all reviews for a game
 
-```{r eval = FALSE}
+The main function of the package is `allReviews`
+
+The function is used to return every review of a game on the Steam store.
+
+```{r eval = TRUE}
+#library the package
 library(steamReviews)
 
 #Get reviews for Planet Zoo: Conservation Pack
 reviews <- allReviews(game_id = 2013290)
-```
 
+#inspect reviews
+head(reviews$review)
+```
+## Find a games ID
+
+Most functions of the package require you to know the specific Steam store app id.
+
+This can be found using the `gameID` function.
+
+```{r eval = TRUE}
+#library the package
+library(steamReviews)
+
+#Find game IDs for games containing the word "Halo"
+ids <- gameID("Halo")
+
+#inspect game IDs
+head(ids)
+```
 
 ## Issues and bugs
 
