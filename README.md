@@ -5,7 +5,7 @@
 coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nfox29/steamReviews?branch=main)
 <!-- badges: end -->
 
-## steamReviews
+# steamReviews <a href="https://github.com/nfox29/steamReviews"><img src="man/figures/README-logo.png" align="right" height="132" /></a>
 
 The goal of this R package is to provide an accessible method for
 returning reviews from the Steam API into the R environment. The package
@@ -52,7 +52,7 @@ ids <- gameID("Halo")
 #inspect game IDs
 head(ids)
 #>                                           
-#> 1 1224900                      Halo Beats!
+#> 1 2024010          Chasing Halo:Iron Storm
 #> 2 1064220                      Halo: Reach
 #> 3 1064221 Halo: Combat Evolved Anniversary
 #> 4 1064270              Halo 2: Anniversary
