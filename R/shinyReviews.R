@@ -1,10 +1,8 @@
-#remotes::install_github("daqana/dqshiny")
-
-library(shiny)
-library(dqshiny)
-library(dplyr)
-
 shinyReviews <- function(){
+
+  library(shiny)
+  library(dqshiny)
+  library(dplyr)
 
   # load all game titles
   all_games <- gameList()
@@ -113,4 +111,3 @@ shinyReviews <- function(){
   shinyApp(ui, server)
 
 }
-

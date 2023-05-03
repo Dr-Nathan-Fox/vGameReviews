@@ -3,6 +3,9 @@
 
 [![Codecov test
 coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nfox29/steamReviews?branch=main)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- badges: end -->
 
 # steamReviews <a href="https://github.com/nfox29/steamReviews"><img src="man/figures/README-logo.png" align="right" height="132" /></a>

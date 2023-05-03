@@ -1,0 +1,64 @@
+---
+title: "softwareX_paper"
+author: "Nathan Fox"
+date: '2022-09-26'
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#one
+```{r one, eval=FALSE}
+#Library the package 
+library(steamReviews)
+
+#Find game IDs for games containing the word "Zoo" 
+ids <- gameID("Zoo") 
+
+#Inspect game IDs 
+head(ids) 
+```
+
+#two
+```{r two, eval=FALSE}
+#Library the package 
+library(steamReviews)
+
+#Get reviews for Planet Zoo: Conservation Pack 
+reviews <- allReviews(game_id = 2013290) 
+
+#Inspect reviews 
+head(reviews$review) 
+```
+
+#three
+```{r three, eval=FALSE}
+#Library the package 
+library(steamReviews)
+library(data.table) 
+
+#Get reviews for Cities: Skylines
+reviews <- posReviews(255710) 
+
+#Filter reviews 
+pollution <- reviews[reviews$review %like% "pollution", ] 
+
+#Inspect reviews 
+head(pollution$review) 
+```
+
+#four
+```{r four, eval=FALSE}
+#Library the package 
+library(steamReviews)
+
+#Get reviews for Little Mouse's Encyclopedia
+reviews <- allReviews(424200) 
+
+#Export data 
+write.csv(reviews, ".//reviews_out.csv")  
+```
+
+

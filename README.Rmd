@@ -1,11 +1,12 @@
 ---
 output: github_document
 ---
-
 <!-- badges: start -->
   [![Codecov test coverage](https://codecov.io/gh/nfox29/steamReviews/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nfox29/steamReviews?branch=main)
+  [![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
   <!-- badges: end -->
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -14,8 +15,6 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-
-
 # steamReviews <a href="https://github.com/nfox29/steamReviews"><img src="man/figures/README-logo.png" align="right" height="132" /></a>
 
 The goal of this R package is to provide an accessible method for returning reviews from the Steam API into the R environment. The package can also be used to find information about the games, see the 
