@@ -1,4 +1,4 @@
-Package: steamReviews
+Package: vGameReviews
 Title: Query the Steam Api for game reviews
 Version: 0.0.0.9000
 Authors@R: 
